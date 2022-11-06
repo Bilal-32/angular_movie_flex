@@ -1,0 +1,38 @@
+<div class="main-page" id="unique-part" style="text-align: center;padding-top: 200px">
+    <h1 class="banner_text" style="font-weight: bold;font-size: 30px;">
+      Welcome to myFlix!
+    </h1>
+    <button
+      mat-raised-button
+      (click)="openUserRegistrationDialog()"
+      style="margin-right: 10px;"
+      color="primary"
+    >
+      Sign Up
+    </button>
+    <button
+      mat-raised-button
+      color="secondary"
+      (click)="openUserLoginDialog()"
+      style="margin-right: 10px;"
+    >
+      Login
+    </button>
+  </div>
+  <style>
+    .banner_text {
+        background: -webkit-linear-gradient(left, #e73e8c 0%,#7e09f7 58%);
+        background-clip: border-box;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 100px;
+        font-weight: 400;
+        font-family: 'Anton', sans-serif;
+        text-transform: uppercase;
+        filter: drop-shadow(0 0 35px #4d0148);
+    }
+    #unique-part {
+        height: 100vh;
+        background: #000;
+    }
+  </style>
