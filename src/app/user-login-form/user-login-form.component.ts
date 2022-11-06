@@ -10,7 +10,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./user-login-form.component.css']
 })
 export class UserLoginFormComponent implements OnInit {
-  @Input() userData = { Username: '', Password: '' };
+  // @Input() userData = { Username: '', Password: '' };
+  @Input() userData = { userName: '', password: '' };
   constructor(
     public fetchApiData: FetchApiDataService,
     public dialogRef: MatDialogRef<UserLoginFormComponent>,
@@ -26,7 +27,7 @@ export class UserLoginFormComponent implements OnInit {
       console.log(result);
       // Add token and username to local Storage
       localStorage.setItem('token', result.token);
-      localStorage.setItem('user', result.user.Username);
+      localStorage.setItem('user', result.user.userName);
       this.router.navigate(['movies']);
     }, (result) => {
       console.log(result);

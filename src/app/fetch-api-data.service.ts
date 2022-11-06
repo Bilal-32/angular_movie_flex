@@ -5,7 +5,7 @@ import { Observable, throwError } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 //Declaring the api url that will provide data for the client app
-const apiUrl = 'https://flix-movie-app.herokuapp.com/';
+const apiUrl = 'https://my-flix-careerfoundry.herokuapp.com/'; //https://flix-movie-app.herokuapp.com/  Using the careerfoundry's because it has movies data
 const token = localStorage.getItem('token');
 
 @Injectable({

@@ -5,6 +5,9 @@
     <mat-card-content class="edit-profile-dialog-content">
         <form>
             <mat-form-field>
+                <input matInput [(ngModel)]="userData.name" placeholder="Name" type="text" name="Name">
+            </mat-form-field>
+            <mat-form-field>
                 <input matInput [(ngModel)]="userData.Username" placeholder="Username" type="text" name="Username">
             </mat-form-field>
             <mat-form-field>

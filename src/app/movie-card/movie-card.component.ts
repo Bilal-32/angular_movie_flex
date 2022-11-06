@@ -1,3 +1,5 @@
+import { DirectorsPageComponent } from './../directors-page/directors-page.component';
+import { MovieSummaryComponent } from './../movie-summary/movie-summary.component';
 import { GenreComponent } from './../genre/genre.component';
 import { Component, OnInit } from '@angular/core';
 import { FetchApiDataService } from '../fetch-api-data.service';
@@ -58,6 +60,46 @@ getMovies(): void {
         name: name,
         description: description,
 
+      },
+      width: '500px',
+    });
+  }
+     fav(id: string): boolean{
+        return this.favoriteMovies.includes(id);
+      ;
+      }
+   
+      addToFavs(id: string): void {
+        console.log(id);
+        this.fetchApiData.addFavoriteMovie(id).subscribe((result) => {
+          console.log(result);
+          this.ngOnInit();
+        })
+      }
+    
+      removeFromFavs(id: string): void {
+        console.log(id);
+        this.fetchApiData.removeFavoriteMovie(id).subscribe((result) => {
+          console.log(result);
+          this.ngOnInit();
+        })
+      }
+
+      openDetailsDialog(title: string, description: string): void {
+    this.dialog.open(MovieSummaryComponent, {
+      data: {
+        title: title,
+        description: description,
+      },
+      width: '500px',
+    });
+  }
+  openDirectorDialog(name: string, bio: string, portrait:string): void {
+    this.dialog.open(DirectorsPageComponent, {
+      data: {
+        name: name,
+        bio: bio,
+        portrait: portrait,
       },
       width: '500px',
     });
