@@ -1,4 +1,4 @@
-import { DirectorsPageComponent } from './../directors-page/directors-page.component';
+import { DirectorComponent } from './../directors-page/directors-page.component';
 import { MovieSummaryComponent } from './../movie-summary/movie-summary.component';
 import { GenreComponent } from './../genre/genre.component';
 import { Component, OnInit } from '@angular/core';
@@ -95,7 +95,7 @@ getMovies(): void {
     });
   }
   openDirectorDialog(name: string, bio: string, portrait:string): void {
-    this.dialog.open(DirectorsPageComponent, {
+    this.dialog.open(DirectorComponent, {
       data: {
         name: name,
         bio: bio,
